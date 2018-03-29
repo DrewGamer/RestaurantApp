@@ -32,8 +32,9 @@
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Photo URL</ion-label>
-      <ion-input type="text" [(ngModel)]="imgURL"></ion-input>
+      <button ion-button color="secondary" icon-only (click)="takePhoto()"><ion-icon name="camera"></ion-icon></button>
+      <!--ion-label floating>Photo URL</ion-label>
+      <ion-input type="text" [(ngModel)]="imgURL"></ion-input-->
     </ion-item>
 
     <ion-item>
