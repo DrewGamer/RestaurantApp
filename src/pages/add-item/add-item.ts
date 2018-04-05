@@ -12,6 +12,7 @@ export class AddItemPage {
   price;
   category;
   imgURL;
+  photo;
   description;
 
   constructor(public navCtrl: NavController, public view: ViewController, private camera: Camera) {
@@ -44,7 +45,8 @@ export class AddItemPage {
     this.camera.getPicture(options).then((imageData) => {
       // imageData is either a base64 encoded string or a file URI
       // If it's base64:
-      let base64Image = 'data:image/jpeg;base64,' + imageData;
+      //let base64Image = 'data:image/jpeg;base64,' + imageData;
+      this.photo = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
       // Handle error
     });
