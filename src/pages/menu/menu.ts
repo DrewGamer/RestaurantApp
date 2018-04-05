@@ -48,6 +48,7 @@ import { Parse } from 'parse';
      menu.set("price", Number.parseFloat(item.price));
      menu.set("category", item.category);
      menu.set("imgURL", item.imgURL);
+     menu.set("photo", item.photo);
      menu.set("description", item.description);
 
      menu.save(null, {
@@ -122,6 +123,7 @@ import { Parse } from 'parse';
           price: menus[i].get("price"),
           category: menus[i].get("category"),
           imgURL: menus[i].get("imgURL"),
+          photo: menus[i].get("photo"),
           description: menus[i].get("description"),
           id: menus[i].id
         }

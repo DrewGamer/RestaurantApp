@@ -26,6 +26,7 @@ export class AddItemPage {
       price: this.price,
       category: this.category,
       imgURL: this.imgURL,
+      photo: this.photo,
       description: this.description
     };
 
