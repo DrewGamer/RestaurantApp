@@ -12,7 +12,7 @@ export class AddItemPage {
   price;
   category;
   imgURL;
-  photo;
+  productimage: File;
   description;
 
   constructor(public navCtrl: NavController, public view: ViewController, private camera: Camera) {
@@ -26,7 +26,7 @@ export class AddItemPage {
       price: this.price,
       category: this.category,
       imgURL: this.imgURL,
-      photo: this.photo,
+      productimage: this.productimage,
       description: this.description
     };
 
@@ -47,7 +47,7 @@ export class AddItemPage {
       // imageData is either a base64 encoded string or a file URI
       // If it's base64:
       //let base64Image = 'data:image/jpeg;base64,' + imageData;
-      this.photo = 'data:image/jpeg;base64,' + imageData;
+      this.productimage = imageData;
     }, (err) => {
       // Handle error
     });
