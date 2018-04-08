@@ -18,7 +18,7 @@ export class AddItemPage {
   imagePreview;
 
   constructor(public navCtrl: NavController, public view: ViewController, private camera: Camera) {
-
+    this.imagePreview = "http://www.pixedelic.com/themes/geode/demo/wp-content/uploads/sites/4/2014/04/placeholder4.png";
   }
 
   saveItem() {
@@ -51,6 +51,7 @@ export class AddItemPage {
       // Handle error
     });
 
+    this.imagePreview = this.productimage;
     this.ionViewWillEnter();
   }
 
@@ -59,7 +60,6 @@ export class AddItemPage {
   }
 
   ionViewWillEnter() {
-    this.imagePreview = this.productimage;
 
   }
 
