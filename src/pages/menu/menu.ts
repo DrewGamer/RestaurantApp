@@ -43,12 +43,20 @@ import { Parse } from 'parse';
    saveItem(item) {
      var Menu = new Parse.Object.extend("Menu");
      var menu = new Menu();
+     var base64 = item.productimage;
+     var file = new Parse.File("photo.jpg", { base64: base64});
+
+     file.save().then(function () {
+
+     }, function(error) {
+
+     });
 
      menu.set("name", item.name);
      menu.set("price", Number.parseFloat(item.price));
      menu.set("category", item.category);
      menu.set("imgURL", item.imgURL);
-     menu.set("productimage", item.productimage);
+     menu.set("productimage", file);
      menu.set("description", item.description);
 
      menu.save(null, {

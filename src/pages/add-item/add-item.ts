@@ -12,7 +12,7 @@ export class AddItemPage {
   price;
   category;
   imgURL;
-  productimage: File;
+  productimage;
   description;
 
   constructor(public navCtrl: NavController, public view: ViewController, private camera: Camera) {
