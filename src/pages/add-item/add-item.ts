@@ -15,6 +15,8 @@ export class AddItemPage {
   productimage;
   description;
 
+  imagePreview;
+
   constructor(public navCtrl: NavController, public view: ViewController, private camera: Camera) {
 
   }
@@ -44,22 +46,21 @@ export class AddItemPage {
   }
 
     this.camera.getPicture(options).then((imageData) => {
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64:
-      //let base64Image = 'data:image/jpeg;base64,' + imageData;
       this.productimage = imageData;
-      this.doRefresh();
     }, (err) => {
       // Handle error
     });
-  }
 
-  doRefresh() {
-
+    this.ionViewWillEnter();
   }
 
   close() {
     this.view.dismiss();
+  }
+
+  ionViewWillEnter() {
+    this.imagePreview = this.productimage;
+
   }
 
 }

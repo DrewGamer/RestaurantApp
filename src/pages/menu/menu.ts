@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController,
+         AlertController, LoadingController } from 'ionic-angular';
 import { AddItemPage } from '../add-item/add-item'
 import { ItemDetailPage } from '../item-detail/item-detail';
 import { ItemEditPage } from '../item-edit/item-edit';
@@ -21,7 +22,7 @@ import { Parse } from 'parse';
 
    items = [];
 
-   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public alertCtrl: AlertController) {
+   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public alertCtrl: AlertController, public loadCtrl: LoadingController) {
    }
 
    addItem() {
@@ -30,10 +31,15 @@ import { Parse } from 'parse';
      addModal.onDidDismiss((item) => {
 
        if (item) {
+         let loader = this.loadCtrl.create({
+           content: 'Signing in...'
+         });
+
+         loader.present();
          this.saveItem(item);
-         //we can reload the page with the following line, NOTE this will REMOVE all previous navigations D:
-         //this.navCtrl.setRoot(this.navCtrl.getActive().component);
-         this.ionViewDidEnter();
+         loader.dismiss();
+
+         //this.ionViewDidEnter();
        }
 
      });     
@@ -97,7 +103,6 @@ import { Parse } from 'parse';
           query.get(item.id, {
             success: function(itemToDelete) {
               itemToDelete.destroy();
-              alert("Item Deleted!");
             },
             error: function(object, error) {
             }
