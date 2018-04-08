@@ -126,12 +126,14 @@ import { Parse } from 'parse';
       console.log(menus.length);
 
       for (var i = 0; i < menus.length; i++) {
+        var photo = menus[i].get("productimage");
+        var photoURL = photo.url();
+
         var menuItem = {
           name: menus[i].get("name"),
           price: menus[i].get("price"),
           category: menus[i].get("category"),
-          imgURL: menus[i].get("imgURL"),
-          productimage: menus[i].get("productimage"),
+          imgURL: photoURL,
           description: menus[i].get("description"),
           id: menus[i].id
         }
