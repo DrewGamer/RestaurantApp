@@ -48,9 +48,14 @@ export class AddItemPage {
       // If it's base64:
       //let base64Image = 'data:image/jpeg;base64,' + imageData;
       this.productimage = imageData;
+      this.doRefresh();
     }, (err) => {
       // Handle error
     });
+  }
+
+  doRefresh() {
+
   }
 
   close() {
