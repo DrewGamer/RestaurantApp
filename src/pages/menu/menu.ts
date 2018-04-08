@@ -97,6 +97,7 @@ import { Parse } from 'parse';
           query.get(item.id, {
             success: function(itemToDelete) {
               itemToDelete.destroy();
+              alert("Item Deleted!");
             },
             error: function(object, error) {
             }

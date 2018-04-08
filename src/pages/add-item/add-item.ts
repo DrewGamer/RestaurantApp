@@ -36,12 +36,12 @@ export class AddItemPage {
 
   takePhoto() {
     const options: CameraOptions = {
-    quality: 100,
+    quality: 50,
     destinationType: this.camera.DestinationType.DATA_URL,
     encodingType: this.camera.EncodingType.JPEG,
-    mediaType: this.camera.MediaType.PICTURE
+    mediaType: this.camera.MediaType.PICTURE,
+    correctOrientation: true
   }
-    console.log("WE TOOK THE PICTURE!!!");
 
     this.camera.getPicture(options).then((imageData) => {
       // imageData is either a base64 encoded string or a file URI

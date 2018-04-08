@@ -31,13 +31,13 @@
       </ion-select>
     </ion-item>
 
-    <ion-item style="height:20%">
-      <span style="width:15%" float-left>
-        <button ion-button color="secondary" icon-only (click)="takePhoto()"><ion-icon name="camera"></ion-icon></button>
-      </span>
-      <span style="width:85%" float-right>
+    <ion-item>
+      <div align="center">
         <ion-img src={{productimage}}></ion-img>
-      </span>
+      </div>
+      <div align="center">
+        <button ion-button color="secondary" icon-only (click)="takePhoto()"><ion-icon name="camera"></ion-icon></button>
+      </div>
       <!--ion-label floating>Photo URL</ion-label>
       <ion-input type="text" [(ngModel)]="imgURL"></ion-input-->
     </ion-item>
